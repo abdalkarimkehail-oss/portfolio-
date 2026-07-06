@@ -1,18 +1,25 @@
 import { motion } from 'framer-motion'
 import { fadeUp, staggerContainer, viewportOnce } from '../lib/motion'
+import { Icon } from '../lib/icons'
 
 const projects = [
   {
     title: 'JoRide',
+    tag: 'MOBILE / P2P PLATFORM',
     desc: 'P2P car-sharing platform — mobile app + backend for peer-to-peer vehicle rentals.',
+    gradient: 'bg-gradient-to-br from-(--color-navy-light) to-(--color-bg)',
   },
   {
     title: 'MediRoute JO',
+    tag: 'HEALTHTECH / AI',
     desc: 'AI-assisted medical referral system routing patients to the right care faster.',
+    gradient: 'bg-gradient-to-br from-(--color-muted)/30 to-(--color-bg)',
   },
   {
     title: 'Alrayyan Group',
+    tag: 'WEB / MULTI-SITE',
     desc: 'Multi-site web presence for a group of businesses, built for speed and clarity.',
+    gradient: 'bg-gradient-to-br from-(--color-navy) to-(--color-surface)',
   },
 ]
 
@@ -53,12 +60,18 @@ export default function Projects() {
               transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
               className="rounded-2xl border border-(--color-border) bg-(--color-surface) overflow-hidden group"
             >
-              <div className="aspect-[4/3] bg-gradient-to-br from-(--color-muted)/10 to-transparent flex items-center justify-center overflow-hidden">
-                <span className="text-xs text-(--color-muted) transition-transform duration-500 group-hover:scale-110">
+              <div className={`relative aspect-[4/3] flex items-center justify-center ${p.gradient}`}>
+                <span className="text-xs tracking-[0.2em] uppercase text-(--color-text)/70 transition-transform duration-500 group-hover:scale-110">
                   {p.title}
                 </span>
+                <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/30 backdrop-blur flex items-center justify-center text-white">
+                  <Icon name="arrow" size={14} />
+                </div>
               </div>
               <div className="p-6">
+                <div className="text-[10px] uppercase tracking-wider text-(--color-accent) font-semibold mb-1.5">
+                  {p.tag}
+                </div>
                 <h3 className="font-semibold mb-1">{p.title}</h3>
                 <p className="text-sm text-(--color-muted) leading-relaxed">{p.desc}</p>
               </div>

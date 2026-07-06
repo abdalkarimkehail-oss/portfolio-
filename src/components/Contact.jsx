@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { fadeUp, staggerContainer, viewportOnce } from '../lib/motion'
+import { viewportOnce } from '../lib/motion'
+import { Icon } from '../lib/icons'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', budget: '', message: '' })
@@ -29,117 +30,90 @@ export default function Contact() {
     <section id="contact" className="py-24 md:py-32">
       <div className="container-px">
         <motion.div
-          initial="hidden"
-          whileInView="show"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={viewportOnce}
-          variants={staggerContainer(0.1)}
-          className="mb-14"
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="rounded-[32px] bg-gradient-to-br from-(--color-navy-light) to-(--color-navy) text-white p-8 md:p-14"
         >
-          <motion.h2
-            variants={fadeUp}
-            className="uppercase font-black tracking-tight leading-none text-[clamp(2rem,5vw,3.5rem)]"
-          >
-            Let's Work<span className="block text-(--color-muted)">Together</span>
-          </motion.h2>
-        </motion.div>
+          <h2 className="uppercase font-black tracking-tight leading-none text-[clamp(1.9rem,5vw,3.2rem)] mb-3">
+            Let's Work<span className="block text-white/50">Together</span>
+          </h2>
+          <p className="text-white/70 text-sm mb-10 max-w-sm">
+            Got a project in mind? Drop me a line.
+          </p>
 
-        <motion.form
-          initial="hidden"
-          whileInView="show"
-          viewport={viewportOnce}
-          variants={fadeUp}
-          onSubmit={handleSubmit}
-          className="max-w-xl"
-        >
-          {submitted ? (
-            <p className="text-sm text-(--color-muted)">
-              Thanks — I'll get back to you soon.
-            </p>
-          ) : (
-            <>
-              <div className="grid sm:grid-cols-2 gap-5 mb-5">
+          <form onSubmit={handleSubmit} className="max-w-xl">
+            {submitted ? (
+              <p className="text-sm text-white/80">Thanks — I'll get back to you soon.</p>
+            ) : (
+              <>
                 <Field
-                  label="Name"
                   value={form.name}
                   onChange={(v) => update('name', v)}
-                  placeholder="Your name"
+                  placeholder="Name"
                   error={errors.name}
                 />
                 <Field
-                  label="Email"
                   value={form.email}
                   onChange={(v) => update('email', v)}
-                  placeholder="you@email.com"
+                  placeholder="Email"
                   error={errors.email}
                 />
-              </div>
 
-              <div className="mb-5">
-                <label className="block text-[11px] uppercase tracking-wider text-(--color-muted) mb-2">
-                  Budget
-                </label>
                 <select
                   value={form.budget}
                   onChange={(e) => update('budget', e.target.value)}
-                  className="w-full bg-transparent border-b border-(--color-border) py-3 text-sm focus:outline-none focus:border-white transition-colors"
+                  className="w-full bg-white/10 border border-white/15 rounded-xl px-4 py-3.5 text-sm mb-4 text-white/80 focus:outline-none focus:border-white/40 transition-colors"
                 >
-                  <option value="" className="bg-(--color-bg)">
-                    Select…
+                  <option value="" className="text-black">
+                    Budget
                   </option>
-                  <option className="bg-(--color-bg)">&lt;$3k</option>
-                  <option className="bg-(--color-bg)">$3k – $5k</option>
-                  <option className="bg-(--color-bg)">$5k – $10k</option>
-                  <option className="bg-(--color-bg)">&gt;$10k</option>
+                  <option className="text-black">&lt;$3k</option>
+                  <option className="text-black">$3k – $5k</option>
+                  <option className="text-black">$5k – $10k</option>
+                  <option className="text-black">&gt;$10k</option>
                 </select>
-              </div>
 
-              <div className="mb-6">
-                <label className="block text-[11px] uppercase tracking-wider text-(--color-muted) mb-2">
-                  Message
-                </label>
                 <textarea
                   value={form.message}
                   onChange={(e) => update('message', e.target.value)}
-                  placeholder="Tell me about your project..."
+                  placeholder="Message"
                   rows={4}
-                  className="w-full bg-transparent border-b border-(--color-border) py-3 text-sm focus:outline-none focus:border-white transition-colors resize-y"
+                  className="w-full bg-white/10 border border-white/15 rounded-xl px-4 py-3.5 text-sm placeholder-white/50 mb-1.5 focus:outline-none focus:border-white/40 transition-colors resize-y"
                 />
-                {errors.message && (
-                  <p className="text-xs text-red-400 mt-1">{errors.message}</p>
-                )}
-              </div>
+                {errors.message && <p className="text-xs text-red-300 mb-4">{errors.message}</p>}
 
-              <motion.button
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                transition={{ duration: 0.2 }}
-                type="submit"
-                className="px-8 py-3.5 rounded-full bg-(--color-muted) text-(--color-bg) text-sm font-semibold"
-              >
-                Submit
-              </motion.button>
-            </>
-          )}
-        </motion.form>
+                <motion.button
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  transition={{ duration: 0.2 }}
+                  type="submit"
+                  className="mt-4 px-8 py-3.5 rounded-full bg-white text-(--color-navy) text-sm font-semibold flex items-center gap-2"
+                >
+                  Submit
+                  <Icon name="send" size={14} />
+                </motion.button>
+              </>
+            )}
+          </form>
+        </motion.div>
       </div>
     </section>
   )
 }
 
-function Field({ label, value, onChange, placeholder, error }) {
+function Field({ value, onChange, placeholder, error }) {
   return (
-    <div>
-      <label className="block text-[11px] uppercase tracking-wider text-(--color-muted) mb-2">
-        {label}
-      </label>
+    <div className="mb-4">
       <input
         type="text"
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        className="w-full bg-transparent border-b border-(--color-border) py-3 text-sm focus:outline-none focus:border-white transition-colors"
+        className="w-full bg-white/10 border border-white/15 rounded-xl px-4 py-3.5 text-sm placeholder-white/50 focus:outline-none focus:border-white/40 transition-colors"
       />
-      {error && <p className="text-xs text-red-400 mt-1">{error}</p>}
+      {error && <p className="text-xs text-red-300 mt-1">{error}</p>}
     </div>
   )
 }

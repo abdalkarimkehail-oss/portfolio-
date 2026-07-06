@@ -4,18 +4,21 @@ import { fadeUp, staggerContainer, viewportOnce } from '../lib/motion'
 const experience = [
   {
     company: 'JoRide',
-    desc: 'Built the mobile app and backend services for a peer-to-peer car-sharing platform, from architecture to launch.',
+    role: 'Lead Mobile Engineer',
     date: '2024 — Present',
+    desc: 'Built the mobile app and backend services for a peer-to-peer car-sharing platform, from architecture to launch.',
   },
   {
     company: 'MediRoute JO',
-    desc: 'Developed an AI-driven referral engine to route patients to appropriate care providers.',
+    role: 'Software Engineer',
     date: '2023 — 2024',
+    desc: 'Developed an AI-driven referral engine to route patients to appropriate care providers.',
   },
   {
     company: 'Alrayyan Group',
-    desc: 'Delivered a multi-site web presence covering several affiliated businesses.',
+    role: 'Web Developer',
     date: '2022 — 2023',
+    desc: 'Delivered a multi-site web presence covering several affiliated businesses.',
   },
 ]
 
@@ -49,11 +52,18 @@ export default function Experience() {
             <motion.div
               key={e.company}
               variants={fadeUp}
-              className="grid md:grid-cols-[1fr_2fr_1fr] gap-4 md:gap-6 py-8 border-b border-(--color-border) transition-all duration-300 hover:pl-3"
+              className="grid md:grid-cols-[1fr_2fr] gap-3 md:gap-10 py-8 border-b border-(--color-border) transition-all duration-300 hover:pl-3"
             >
-              <div className="font-semibold">{e.company}</div>
+              <div>
+                <div className="flex flex-wrap items-baseline gap-x-3">
+                  <span className="font-semibold">{e.company}</span>
+                  <span className="text-xs font-semibold text-(--color-accent) uppercase tracking-wide">
+                    {e.role}
+                  </span>
+                </div>
+                <div className="text-xs text-(--color-muted) mt-1">{e.date}</div>
+              </div>
               <div className="text-sm text-(--color-muted) leading-relaxed">{e.desc}</div>
-              <div className="text-xs text-(--color-muted) md:text-right">{e.date}</div>
             </motion.div>
           ))}
         </motion.div>
