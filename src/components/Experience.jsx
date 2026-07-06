@@ -43,13 +43,13 @@ export default function Experience() {
           whileInView="show"
           viewport={viewportOnce}
           variants={staggerContainer(0.08)}
-          className="border-t border-white/10"
+          className="border-t border-(--color-border)"
         >
           {experience.map((e) => (
             <motion.div
               key={e.company}
               variants={fadeUp}
-              className="grid md:grid-cols-[1fr_2fr_1fr] gap-4 md:gap-6 py-8 border-b border-white/10 transition-all duration-300 hover:pl-3"
+              className="grid md:grid-cols-[1fr_2fr_1fr] gap-4 md:gap-6 py-8 border-b border-(--color-border) transition-all duration-300 hover:pl-3"
             >
               <div className="font-semibold">{e.company}</div>
               <div className="text-sm text-(--color-muted) leading-relaxed">{e.desc}</div>

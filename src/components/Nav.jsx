@@ -26,7 +26,7 @@ export default function Nav() {
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-black/60 backdrop-blur-md border-b border-white/10 py-4'
+          ? 'bg-(--color-bg)/70 backdrop-blur-md border-b border-(--color-border) py-4'
           : 'bg-transparent border-b border-transparent py-6'
       }`}
     >
@@ -50,7 +50,7 @@ export default function Nav() {
 
         <a
           href="#contact"
-          className="hidden md:inline-block text-xs px-5 py-2.5 rounded-full border border-white/15 hover:bg-white hover:text-black transition-all duration-300"
+          className="hidden md:inline-block text-xs px-5 py-2.5 rounded-full border border-(--color-border) hover:bg-(--color-muted) hover:text-(--color-bg) transition-all duration-300"
         >
           Let's Talk
         </a>

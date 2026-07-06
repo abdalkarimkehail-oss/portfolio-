@@ -42,7 +42,7 @@ export default function Tools() {
               variants={fadeUp}
               whileHover={{ y: -6, scale: 1.02 }}
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="rounded-2xl border border-white/10 bg-(--color-surface) px-4 py-7 text-center"
+              className="rounded-2xl border border-(--color-border) bg-(--color-surface) px-4 py-7 text-center"
             >
               <div className="font-semibold text-sm">{t.name}</div>
               <div className="text-[11px] text-(--color-muted) mt-1">{t.sub}</div>

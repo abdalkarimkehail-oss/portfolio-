@@ -51,9 +51,9 @@ export default function Projects() {
               variants={fadeUp}
               whileHover={{ y: -8 }}
               transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="rounded-2xl border border-white/10 bg-(--color-surface) overflow-hidden group"
+              className="rounded-2xl border border-(--color-border) bg-(--color-surface) overflow-hidden group"
             >
-              <div className="aspect-[4/3] bg-gradient-to-br from-white/5 to-transparent flex items-center justify-center overflow-hidden">
+              <div className="aspect-[4/3] bg-gradient-to-br from-(--color-muted)/10 to-transparent flex items-center justify-center overflow-hidden">
                 <span className="text-xs text-(--color-muted) transition-transform duration-500 group-hover:scale-110">
                   {p.title}
                 </span>

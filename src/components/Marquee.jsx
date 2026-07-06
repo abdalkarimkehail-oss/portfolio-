@@ -2,7 +2,7 @@ const tags = ['DYNAMIC ANIMATION', 'MOTION DESIGN', 'FLUTTER', 'ASP.NET CORE', '
 
 export default function Marquee() {
   return (
-    <div className="border-y border-white/10 overflow-hidden py-5 whitespace-nowrap">
+    <div className="border-y border-(--color-border) overflow-hidden py-5 whitespace-nowrap">
       <div className="inline-flex animate-[marquee_22s_linear_infinite]">
         {[...tags, ...tags].map((t, i) => (
           <span

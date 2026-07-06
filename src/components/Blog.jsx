@@ -55,7 +55,7 @@ export default function Blog() {
               variants={fadeUp}
               whileHover={{ y: -6 }}
               transition={{ duration: 0.3 }}
-              className="border-t border-white/10 pt-6"
+              className="border-t border-(--color-border) pt-6"
             >
               <div className="text-xs text-(--color-muted) mb-3">
                 {p.date} · {p.read}

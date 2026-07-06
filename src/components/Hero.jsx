@@ -59,7 +59,7 @@ export default function Hero() {
         >
           <motion.div
             variants={fadeUp}
-            className="w-28 h-28 rounded-full overflow-hidden border border-white/10 shrink-0"
+            className="w-28 h-28 rounded-full overflow-hidden border border-(--color-border) shrink-0"
           >
             <img
               src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=400&h=400&fit=crop&grayscale"
@@ -83,7 +83,7 @@ export default function Hero() {
                   href={s.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-xs text-(--color-muted) border-b border-transparent hover:text-white hover:border-white transition-all duration-300"
+                  className="text-xs text-(--color-muted) border-b border-transparent hover:text-(--color-text) hover:border-(--color-text) transition-all duration-300"
                 >
                   {s.label}
                 </a>
@@ -112,7 +112,7 @@ export default function Hero() {
 
           <motion.div
             variants={fadeUp}
-            className="grid sm:grid-cols-3 gap-6 mt-16 pt-9 border-t border-white/10"
+            className="grid sm:grid-cols-3 gap-6 mt-16 pt-9 border-t border-(--color-border)"
           >
             <Stat n={5} label="Years of Experience" />
             <Stat n={14} label="Projects Completed" />

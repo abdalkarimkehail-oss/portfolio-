@@ -81,15 +81,15 @@ export default function Contact() {
                 <select
                   value={form.budget}
                   onChange={(e) => update('budget', e.target.value)}
-                  className="w-full bg-transparent border-b border-white/15 py-3 text-sm focus:outline-none focus:border-white transition-colors"
+                  className="w-full bg-transparent border-b border-(--color-border) py-3 text-sm focus:outline-none focus:border-white transition-colors"
                 >
-                  <option value="" className="bg-black">
+                  <option value="" className="bg-(--color-bg)">
                     Select…
                   </option>
-                  <option className="bg-black">&lt;$3k</option>
-                  <option className="bg-black">$3k – $5k</option>
-                  <option className="bg-black">$5k – $10k</option>
-                  <option className="bg-black">&gt;$10k</option>
+                  <option className="bg-(--color-bg)">&lt;$3k</option>
+                  <option className="bg-(--color-bg)">$3k – $5k</option>
+                  <option className="bg-(--color-bg)">$5k – $10k</option>
+                  <option className="bg-(--color-bg)">&gt;$10k</option>
                 </select>
               </div>
 
@@ -102,7 +102,7 @@ export default function Contact() {
                   onChange={(e) => update('message', e.target.value)}
                   placeholder="Tell me about your project..."
                   rows={4}
-                  className="w-full bg-transparent border-b border-white/15 py-3 text-sm focus:outline-none focus:border-white transition-colors resize-y"
+                  className="w-full bg-transparent border-b border-(--color-border) py-3 text-sm focus:outline-none focus:border-white transition-colors resize-y"
                 />
                 {errors.message && (
                   <p className="text-xs text-red-400 mt-1">{errors.message}</p>
@@ -114,7 +114,7 @@ export default function Contact() {
                 whileTap={{ scale: 0.97 }}
                 transition={{ duration: 0.2 }}
                 type="submit"
-                className="px-8 py-3.5 rounded-full bg-white text-black text-sm font-semibold"
+                className="px-8 py-3.5 rounded-full bg-(--color-muted) text-(--color-bg) text-sm font-semibold"
               >
                 Submit
               </motion.button>
@@ -137,7 +137,7 @@ function Field({ label, value, onChange, placeholder, error }) {
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        className="w-full bg-transparent border-b border-white/15 py-3 text-sm focus:outline-none focus:border-white transition-colors"
+        className="w-full bg-transparent border-b border-(--color-border) py-3 text-sm focus:outline-none focus:border-white transition-colors"
       />
       {error && <p className="text-xs text-red-400 mt-1">{error}</p>}
     </div>

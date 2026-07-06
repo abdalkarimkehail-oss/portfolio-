@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #0a0a0a;
-  --color-surface: #111111;
-  --color-border: rgba(255, 255, 255, 0.08);
-  --color-text: #ededed;
-  --color-muted: #8a8a8a;
-  --color-warm: #f5f1ea;
+  --color-bg: #14273f;
+  --color-surface: #1c3252;
+  --color-border: rgba(139, 137, 145, 0.25);
+  --color-text: #f1f0f2;
+  --color-muted: #8b8991;
+  --color-warm: #8b8991;
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
