@@ -1,6 +1,13 @@
 import { motion } from 'framer-motion'
 import { fadeUp, staggerContainer, viewportOnce } from '../lib/motion'
 import { Icon } from '../lib/icons'
+import joRideLogo from '../assets/logos/joride.png'
+import padelLogo from '../assets/logos/padel.png'
+import costaLogo from '../assets/logos/costa.jpg'
+import halfMillionLogo from '../assets/logos/half-million.jpg'
+import pharmacyLogo from '../assets/logos/pharmacy.png'
+import k8sLogo from '../assets/logos/kubernetes.png'
+import powerBiLogo from '../assets/logos/power-bi.png'
 
 // Each project can carry a `logo` (imported image) once the asset is available.
 // Until then, `variant` controls the thumbnail backdrop and the title renders as text.
@@ -29,7 +36,7 @@ const projects = [
     desc: "Jordan's first app-based, IoT-powered self-drive car-sharing platform — Flutter app + ASP.NET Core backend.",
     href: 'https://github.com/abdalkarimkehail-oss/joride-frontend',
     variant: 'navy',
-    logo: null,
+    logo: joRideLogo,
   },
   {
     title: 'Padel',
@@ -37,7 +44,7 @@ const projects = [
     desc: 'Court-booking app built from Figma UI/UX mockups — Flutter frontend + ASP.NET Core backend.',
     href: 'https://github.com/abdalkarimkehail-oss/padel-tennis',
     variant: 'grey',
-    logo: null,
+    logo: padelLogo,
   },
   {
     title: 'Costa Coffee',
@@ -45,7 +52,7 @@ const projects = [
     desc: 'Bilingual voice-ordering kiosk app for Costa Coffee — speech-to-text, fuzzy menu matching, card payment.',
     href: 'https://github.com/abdalkarimkehail-oss/costa-coffee-README',
     variant: 'light',
-    logo: null,
+    logo: costaLogo,
   },
   {
     title: 'Half Million Coffee',
@@ -53,7 +60,7 @@ const projects = [
     desc: 'Arabic voice-ordering app for Half Million Coffee, built with FlutterFlow.',
     href: 'https://github.com/abdalkarimkehail-oss/half-million-README',
     variant: 'navy',
-    logo: null,
+    logo: halfMillionLogo,
   },
   {
     title: 'Pharmacy App',
@@ -61,7 +68,7 @@ const projects = [
     desc: 'Flutter e-commerce app for browsing and ordering pharmacy products.',
     href: 'https://github.com/abdalkarimkehail-oss/pharmacy-app',
     variant: 'grey',
-    logo: null,
+    logo: pharmacyLogo,
   },
   {
     title: 'Book Reviews — K8s Availability',
@@ -69,7 +76,7 @@ const projects = [
     desc: 'Kubernetes availability tactics demonstrated live: fault detection, recovery, prevention, and containment.',
     href: 'https://github.com/abdalkarimkehail-oss/architecture-project',
     variant: 'light',
-    logo: null,
+    logo: k8sLogo,
   },
   {
     title: 'Sales & Logistics BI',
@@ -77,7 +84,7 @@ const projects = [
     desc: 'Star-schema Power BI dashboard analyzing sales performance and logistics operations.',
     href: 'https://github.com/abdalkarimkehail-oss/business-intelligence-',
     variant: 'navy',
-    logo: null,
+    logo: powerBiLogo,
   },
 ]
 
