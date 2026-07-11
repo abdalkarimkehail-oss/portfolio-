@@ -10,6 +10,8 @@
   --color-navy-light: #223761;
   --color-accent: #c7c9d1;
   --color-card-light: #f7f7f8;
+  --color-muted-dark: #6b6e78;
+  --color-border-light: rgba(18, 32, 58, 0.12);
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 

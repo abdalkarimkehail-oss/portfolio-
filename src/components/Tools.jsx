@@ -42,7 +42,7 @@ export default function Tools() {
               variants={fadeUp}
               whileHover={{ y: -6, scale: 1.02 }}
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="rounded-2xl border border-(--color-border) bg-(--color-surface) px-5 py-6 flex items-center gap-3.5"
+              className="rounded-2xl border border-(--color-border-light) bg-(--color-card-light) px-5 py-6 flex items-center gap-3.5 shadow-lg shadow-black/10"
             >
               <div
                 className="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-[11px] shrink-0"
@@ -55,8 +55,8 @@ export default function Tools() {
                 {t.glyph}
               </div>
               <div className="text-left">
-                <div className="font-semibold text-sm">{t.name}</div>
-                <div className="text-[11px] text-(--color-muted) mt-0.5">{t.sub}</div>
+                <div className="font-semibold text-sm text-(--color-muted-dark)">{t.name}</div>
+                <div className="text-[11px] text-(--color-muted-dark)/70 mt-0.5">{t.sub}</div>
               </div>
             </motion.div>
           ))}

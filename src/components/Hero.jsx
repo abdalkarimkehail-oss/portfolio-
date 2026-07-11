@@ -5,10 +5,9 @@ import { Icon } from '../lib/icons'
 import heroPhoto from '../assets/abdalkarim.jpg'
 
 const socials = [
-  { label: 'GitHub', href: 'https://github.com/abdalkarimkehail-oss', icon: 'dribbble' },
-  { label: 'Twitter', href: 'https://twitter.com', icon: 'twitter' },
-  { label: 'Instagram', href: 'https://instagram.com', icon: 'instagram' },
-  { label: 'YouTube', href: 'https://youtube.com', icon: 'youtube' },
+  { label: 'GitHub', href: 'https://github.com/abdalkarimkehail-oss', icon: 'github' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/abdalkarim-kehail/', icon: 'linkedin' },
+  { label: 'Phone', href: 'tel:+966561143498', icon: 'phone' },
 ]
 
 function CountUp({ target }) {
@@ -154,9 +153,9 @@ export default function Hero() {
               variants={fadeUp}
               className="grid grid-cols-3 gap-4 mt-10 pt-8 border-t border-(--color-border)"
             >
-              <Stat n={1} label="Internship Completed" />
-              <Stat n={1} label="Flagship Project" />
-              <Stat n={2} label="Certifications" />
+              <Stat n={2} label="Internship Completed" />
+              <Stat n={5} label="Flagship Project" />
+              <Stat n={4} label="Certifications" />
             </motion.div>
 
             <motion.div

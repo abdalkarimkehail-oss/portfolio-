@@ -3,6 +3,8 @@ import { motion } from 'framer-motion'
 import { viewportOnce } from '../lib/motion'
 import { Icon } from '../lib/icons'
 
+const CONTACT_EMAIL = 'abdalkarimkehail@gmail.com'
+
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', budget: '', message: '' })
   const [errors, setErrors] = useState({})
@@ -23,7 +25,14 @@ export default function Contact() {
 
   function handleSubmit(ev) {
     ev.preventDefault()
-    if (validate()) setSubmitted(true)
+    if (!validate()) return
+
+    const subject = encodeURIComponent(`New project inquiry from ${form.name}`)
+    const body = encodeURIComponent(
+      `Name: ${form.name}\nEmail: ${form.email}\nBudget: ${form.budget || 'Not specified'}\n\nMessage:\n${form.message}`
+    )
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`
+    setSubmitted(true)
   }
 
   return (
@@ -34,18 +43,20 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={viewportOnce}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="rounded-[32px] bg-gradient-to-br from-(--color-navy-light) to-(--color-navy) text-white p-8 md:p-14"
+          className="rounded-[32px] bg-(--color-card-light) text-(--color-bg) p-8 md:p-14 shadow-xl shadow-black/20"
         >
           <h2 className="uppercase font-black tracking-tight leading-none text-[clamp(1.9rem,5vw,3.2rem)] mb-3">
-            Let's Work<span className="block text-white/50">Together</span>
+            Let's Work<span className="block text-(--color-muted-dark)">Together</span>
           </h2>
-          <p className="text-white/70 text-sm mb-10 max-w-sm">
-            Got a project in mind? Drop me a line.
+          <p className="text-(--color-muted-dark) text-sm mb-10 max-w-sm">
+            Got a project in mind? Drop me a line — it opens your email app addressed to me.
           </p>
 
           <form onSubmit={handleSubmit} className="max-w-xl">
             {submitted ? (
-              <p className="text-sm text-white/80">Thanks — I'll get back to you soon.</p>
+              <p className="text-sm text-(--color-muted-dark)">
+                Your email app should have opened with the message ready — hit send there to reach me.
+              </p>
             ) : (
               <>
                 <Field
@@ -64,15 +75,13 @@ export default function Contact() {
                 <select
                   value={form.budget}
                   onChange={(e) => update('budget', e.target.value)}
-                  className="w-full bg-white/10 border border-white/15 rounded-xl px-4 py-3.5 text-sm mb-4 text-white/80 focus:outline-none focus:border-white/40 transition-colors"
+                  className="w-full bg-white border border-(--color-border-light) rounded-xl px-4 py-3.5 text-sm mb-4 text-(--color-bg) focus:outline-none focus:border-(--color-bg)/40 transition-colors"
                 >
-                  <option value="" className="text-black">
-                    Budget
-                  </option>
-                  <option className="text-black">&lt;$3k</option>
-                  <option className="text-black">$3k – $5k</option>
-                  <option className="text-black">$5k – $10k</option>
-                  <option className="text-black">&gt;$10k</option>
+                  <option value="">Budget</option>
+                  <option>&lt;$3k</option>
+                  <option>$3k – $5k</option>
+                  <option>$5k – $10k</option>
+                  <option>&gt;$10k</option>
                 </select>
 
                 <textarea
@@ -80,16 +89,16 @@ export default function Contact() {
                   onChange={(e) => update('message', e.target.value)}
                   placeholder="Message"
                   rows={4}
-                  className="w-full bg-white/10 border border-white/15 rounded-xl px-4 py-3.5 text-sm placeholder-white/50 mb-1.5 focus:outline-none focus:border-white/40 transition-colors resize-y"
+                  className="w-full bg-white border border-(--color-border-light) rounded-xl px-4 py-3.5 text-sm placeholder-(--color-muted-dark)/60 mb-1.5 text-(--color-bg) focus:outline-none focus:border-(--color-bg)/40 transition-colors resize-y"
                 />
-                {errors.message && <p className="text-xs text-red-300 mb-4">{errors.message}</p>}
+                {errors.message && <p className="text-xs text-red-600 mb-4">{errors.message}</p>}
 
                 <motion.button
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                   transition={{ duration: 0.2 }}
                   type="submit"
-                  className="mt-4 px-8 py-3.5 rounded-full bg-white text-(--color-navy) text-sm font-semibold flex items-center gap-2"
+                  className="mt-4 px-8 py-3.5 rounded-full bg-(--color-bg) text-white text-sm font-semibold flex items-center gap-2"
                 >
                   Submit
                   <Icon name="send" size={14} />
@@ -111,9 +120,9 @@ function Field({ value, onChange, placeholder, error }) {
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        className="w-full bg-white/10 border border-white/15 rounded-xl px-4 py-3.5 text-sm placeholder-white/50 focus:outline-none focus:border-white/40 transition-colors"
+        className="w-full bg-white border border-(--color-border-light) rounded-xl px-4 py-3.5 text-sm placeholder-(--color-muted-dark)/60 text-(--color-bg) focus:outline-none focus:border-(--color-bg)/40 transition-colors"
       />
-      {error && <p className="text-xs text-red-300 mt-1">{error}</p>}
+      {error && <p className="text-xs text-red-600 mt-1">{error}</p>}
     </div>
   )
 }

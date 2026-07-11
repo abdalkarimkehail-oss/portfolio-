@@ -58,14 +58,14 @@ export default function Blog() {
               variants={fadeUp}
               whileHover={{ y: -6 }}
               transition={{ duration: 0.3 }}
-              className="rounded-2xl border border-(--color-border) bg-(--color-surface) p-6"
+              className="rounded-2xl border border-(--color-border-light) bg-(--color-card-light) p-6 shadow-lg shadow-black/10"
             >
-              <div className="text-[10px] uppercase tracking-wider text-(--color-accent) font-semibold mb-3">
+              <div className="text-[10px] uppercase tracking-wider text-(--color-muted-dark) font-semibold mb-3">
                 {p.tag}
               </div>
-              <h3 className="font-semibold mb-2 leading-snug">{p.title}</h3>
-              <p className="text-sm text-(--color-muted) leading-relaxed">{p.excerpt}</p>
-              <div className="text-xs text-(--color-muted) mt-4">
+              <h3 className="font-semibold mb-2 leading-snug text-(--color-bg)">{p.title}</h3>
+              <p className="text-sm text-(--color-muted-dark) leading-relaxed">{p.excerpt}</p>
+              <div className="text-xs text-(--color-muted-dark)/70 mt-4">
                 {p.date} · {p.read}
               </div>
             </motion.article>

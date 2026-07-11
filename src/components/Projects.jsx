@@ -2,6 +2,8 @@ import { motion } from 'framer-motion'
 import { fadeUp, staggerContainer, viewportOnce } from '../lib/motion'
 import { Icon } from '../lib/icons'
 
+// Each project can carry a `logo` (imported image) once the asset is available.
+// Until then, `variant` controls the thumbnail backdrop and the title renders as text.
 const variants = {
   navy: {
     bg: 'bg-gradient-to-br from-(--color-navy-light) to-(--color-navy)',
@@ -27,6 +29,7 @@ const projects = [
     desc: "Jordan's first app-based, IoT-powered self-drive car-sharing platform — Flutter app + ASP.NET Core backend.",
     href: 'https://github.com/abdalkarimkehail-oss/joride-frontend',
     variant: 'navy',
+    logo: null,
   },
   {
     title: 'Padel',
@@ -34,6 +37,7 @@ const projects = [
     desc: 'Court-booking app built from Figma UI/UX mockups — Flutter frontend + ASP.NET Core backend.',
     href: 'https://github.com/abdalkarimkehail-oss/padel-tennis',
     variant: 'grey',
+    logo: null,
   },
   {
     title: 'Costa Coffee',
@@ -41,6 +45,7 @@ const projects = [
     desc: 'Bilingual voice-ordering kiosk app for Costa Coffee — speech-to-text, fuzzy menu matching, card payment.',
     href: 'https://github.com/abdalkarimkehail-oss/costa-coffee-README',
     variant: 'light',
+    logo: null,
   },
   {
     title: 'Half Million Coffee',
@@ -48,6 +53,7 @@ const projects = [
     desc: 'Arabic voice-ordering app for Half Million Coffee, built with FlutterFlow.',
     href: 'https://github.com/abdalkarimkehail-oss/half-million-README',
     variant: 'navy',
+    logo: null,
   },
   {
     title: 'Pharmacy App',
@@ -55,6 +61,7 @@ const projects = [
     desc: 'Flutter e-commerce app for browsing and ordering pharmacy products.',
     href: 'https://github.com/abdalkarimkehail-oss/pharmacy-app',
     variant: 'grey',
+    logo: null,
   },
   {
     title: 'Book Reviews — K8s Availability',
@@ -62,6 +69,7 @@ const projects = [
     desc: 'Kubernetes availability tactics demonstrated live: fault detection, recovery, prevention, and containment.',
     href: 'https://github.com/abdalkarimkehail-oss/architecture-project',
     variant: 'light',
+    logo: null,
   },
   {
     title: 'Sales & Logistics BI',
@@ -69,6 +77,7 @@ const projects = [
     desc: 'Star-schema Power BI dashboard analyzing sales performance and logistics operations.',
     href: 'https://github.com/abdalkarimkehail-oss/business-intelligence-',
     variant: 'navy',
+    logo: null,
   },
 ]
 
@@ -112,24 +121,32 @@ export default function Projects() {
                 variants={fadeUp}
                 whileHover={{ y: -8 }}
                 transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                className="rounded-2xl border border-(--color-border) bg-(--color-surface) overflow-hidden group block"
+                className="rounded-2xl overflow-hidden group block shadow-lg shadow-black/20"
               >
-                <div className={`relative aspect-[4/3] flex items-center justify-center ${v.bg}`}>
-                  <span
-                    className={`text-xs tracking-[0.2em] uppercase text-center px-4 font-semibold transition-transform duration-500 group-hover:scale-110 ${v.label}`}
-                  >
-                    {p.title}
-                  </span>
-                  <div className={`absolute top-3 right-3 w-8 h-8 rounded-full backdrop-blur flex items-center justify-center ${v.arrow}`}>
+                <div className={`relative aspect-[4/3] flex items-center justify-center ${p.logo ? 'bg-white' : v.bg}`}>
+                  {p.logo ? (
+                    <img
+                      src={p.logo}
+                      alt={p.title}
+                      className="w-full h-full object-contain p-8 transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <span
+                      className={`text-xs tracking-[0.2em] uppercase text-center px-4 font-semibold transition-transform duration-500 group-hover:scale-110 ${v.label}`}
+                    >
+                      {p.title}
+                    </span>
+                  )}
+                  <div className={`absolute top-3 right-3 w-8 h-8 rounded-full backdrop-blur flex items-center justify-center ${p.logo ? 'bg-(--color-bg)/10 text-(--color-bg)' : v.arrow}`}>
                     <Icon name="arrow" size={14} />
                   </div>
                 </div>
-                <div className="p-6">
-                  <div className="text-[10px] uppercase tracking-wider text-(--color-accent) font-semibold mb-1.5">
+                <div className="p-6 bg-(--color-card-light)">
+                  <div className="text-[10px] uppercase tracking-wider text-(--color-muted-dark) font-semibold mb-1.5">
                     {p.tag}
                   </div>
-                  <h3 className="font-semibold mb-1">{p.title}</h3>
-                  <p className="text-sm text-(--color-muted) leading-relaxed">{p.desc}</p>
+                  <h3 className="font-semibold mb-1 text-(--color-bg)">{p.title}</h3>
+                  <p className="text-sm text-(--color-muted-dark) leading-relaxed">{p.desc}</p>
                 </div>
               </motion.a>
             )
