@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { fadeUp, staggerContainer, viewportOnce } from '../lib/motion'
 import { Icon } from '../lib/icons'
+import heroPhoto from '../assets/abdalkarim.jpg'
 
 const socials = [
   { label: 'GitHub', href: 'https://github.com/abdalkarimkehail-oss', icon: 'dribbble' },
@@ -94,7 +95,7 @@ export default function Hero() {
             <span className="absolute -top-3 -left-3 w-12 h-12 rounded-full border-2 border-dashed border-(--color-muted)/50" />
             <div className="rounded-[18px] overflow-hidden aspect-[3/4]">
               <img
-                src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=400&h=530&fit=crop&grayscale"
+                src={heroPhoto}
                 alt="Abdalkarim Kehail"
                 className="w-full h-full object-cover"
               />
