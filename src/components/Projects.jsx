@@ -5,21 +5,52 @@ import { Icon } from '../lib/icons'
 const projects = [
   {
     title: 'JoRide',
-    tag: 'MOBILE / P2P PLATFORM',
-    desc: 'P2P car-sharing platform — mobile app + backend for peer-to-peer vehicle rentals.',
+    tag: 'MOBILE / IOT / P2P',
+    desc: "Jordan's first app-based, IoT-powered self-drive car-sharing platform — Flutter app + ASP.NET Core backend.",
+    href: 'https://github.com/abdalkarimkehail-oss/joride-frontend',
     gradient: 'bg-gradient-to-br from-(--color-navy-light) to-(--color-bg)',
   },
   {
-    title: 'MediRoute JO',
-    tag: 'HEALTHTECH / AI',
-    desc: 'AI-assisted medical referral system routing patients to the right care faster.',
+    title: 'Padel',
+    tag: 'MOBILE / BACKEND',
+    desc: 'Court-booking app built from Figma UI/UX mockups — Flutter frontend + ASP.NET Core backend.',
+    href: 'https://github.com/abdalkarimkehail-oss/padel-tennis',
+    gradient: 'bg-gradient-to-br from-(--color-navy) to-(--color-surface)',
+  },
+  {
+    title: 'Costa Coffee',
+    tag: 'VOICE ORDERING · PRIVATE',
+    desc: 'Bilingual voice-ordering kiosk app for Costa Coffee — speech-to-text, fuzzy menu matching, card payment.',
+    href: 'https://github.com/abdalkarimkehail-oss/costa-coffee-README',
     gradient: 'bg-gradient-to-br from-(--color-muted)/30 to-(--color-bg)',
   },
   {
-    title: 'Alrayyan Group',
-    tag: 'WEB / MULTI-SITE',
-    desc: 'Multi-site web presence for a group of businesses, built for speed and clarity.',
-    gradient: 'bg-gradient-to-br from-(--color-navy) to-(--color-surface)',
+    title: 'Half Million Coffee',
+    tag: 'VOICE ORDERING · PRIVATE',
+    desc: 'Arabic voice-ordering app for Half Million Coffee, built with FlutterFlow.',
+    href: 'https://github.com/abdalkarimkehail-oss/half-million-README',
+    gradient: 'bg-gradient-to-br from-(--color-navy-light) to-(--color-surface)',
+  },
+  {
+    title: 'Pharmacy App',
+    tag: 'MOBILE',
+    desc: 'Flutter e-commerce app for browsing and ordering pharmacy products.',
+    href: 'https://github.com/abdalkarimkehail-oss/pharmacy-app',
+    gradient: 'bg-gradient-to-br from-(--color-muted)/25 to-(--color-surface)',
+  },
+  {
+    title: 'Book Reviews — K8s Availability',
+    tag: 'SOFTWARE ARCHITECTURE',
+    desc: 'Kubernetes availability tactics demonstrated live: fault detection, recovery, prevention, and containment.',
+    href: 'https://github.com/abdalkarimkehail-oss/architecture-project',
+    gradient: 'bg-gradient-to-br from-(--color-navy) to-(--color-bg)',
+  },
+  {
+    title: 'Sales & Logistics BI',
+    tag: 'POWER BI / DATA',
+    desc: 'Star-schema Power BI dashboard analyzing sales performance and logistics operations.',
+    href: 'https://github.com/abdalkarimkehail-oss/business-intelligence-',
+    gradient: 'bg-gradient-to-br from-(--color-muted)/30 to-(--color-navy)',
   },
 ]
 
@@ -53,15 +84,18 @@ export default function Projects() {
           className="grid md:grid-cols-3 gap-6"
         >
           {projects.map((p) => (
-            <motion.div
+            <motion.a
               key={p.title}
+              href={p.href}
+              target="_blank"
+              rel="noreferrer"
               variants={fadeUp}
               whileHover={{ y: -8 }}
               transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="rounded-2xl border border-(--color-border) bg-(--color-surface) overflow-hidden group"
+              className="rounded-2xl border border-(--color-border) bg-(--color-surface) overflow-hidden group block"
             >
               <div className={`relative aspect-[4/3] flex items-center justify-center ${p.gradient}`}>
-                <span className="text-xs tracking-[0.2em] uppercase text-(--color-text)/70 transition-transform duration-500 group-hover:scale-110">
+                <span className="text-xs tracking-[0.2em] uppercase text-(--color-text)/70 text-center px-4 transition-transform duration-500 group-hover:scale-110">
                   {p.title}
                 </span>
                 <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/30 backdrop-blur flex items-center justify-center text-white">
@@ -75,7 +109,7 @@ export default function Projects() {
                 <h3 className="font-semibold mb-1">{p.title}</h3>
                 <p className="text-sm text-(--color-muted) leading-relaxed">{p.desc}</p>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </motion.div>
       </div>
