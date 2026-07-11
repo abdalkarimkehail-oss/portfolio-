@@ -8,6 +8,7 @@ import halfMillionLogo from '../assets/logos/half-million.jpg'
 import pharmacyLogo from '../assets/logos/pharmacy.png'
 import k8sLogo from '../assets/logos/kubernetes.png'
 import powerBiLogo from '../assets/logos/power-bi.png'
+import arabianOudLogo from '../assets/logos/arabian-oud.png'
 
 // Each project can carry a `logo` (imported image) once the asset is available.
 // Until then, `variant` controls the thumbnail backdrop and the title renders as text.
@@ -85,6 +86,14 @@ const projects = [
     href: 'https://github.com/abdalkarimkehail-oss/business-intelligence-',
     variant: 'navy',
     logo: powerBiLogo,
+  },
+  {
+    title: 'Arabian Oud — Customer Display',
+    tag: 'FLUTTER / POS / LAN API · PRIVATE',
+    desc: 'Customer-facing tablet display for Arabian Oud retail counters — live order sync, NearPay card payment, and a QR receipt flow driven by a local LAN API.',
+    href: 'https://github.com/abdalkarimkehail-oss/Arabian-oud-README',
+    variant: 'light',
+    logo: arabianOudLogo,
   },
 ]
 
