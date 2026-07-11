@@ -2,12 +2,12 @@ import { motion } from 'framer-motion'
 import { fadeUp, staggerContainer, viewportOnce } from '../lib/motion'
 
 const tools = [
-  { name: 'Front-End Dev', sub: 'React, UI Engineering', bg: '#2c4a86', fg: '#fff', glyph: '</>' },
-  { name: 'UI/UX Design', sub: 'Product Design', bg: '#A259FF', fg: '#fff', glyph: 'UX' },
-  { name: 'Data Analysis', sub: 'Insights & Reporting', bg: '#00C7B7', fg: '#0e0e10', glyph: 'DA' },
-  { name: 'Prompt Engineering', sub: 'IBM Certified', bg: '#052FAD', fg: '#fff', glyph: 'AI' },
-  { name: 'Azure AI Fundamentals', sub: 'Microsoft Certified', bg: '#0078D4', fg: '#fff', glyph: 'Az' },
-  { name: 'IoT Systems', sub: 'Smart Products', bg: '#ffffff', fg: '#111111', glyph: 'IoT', border: true },
+  { name: 'Front-End Dev', sub: 'React, UI Engineering', bg: '#223761', fg: '#fff', glyph: '</>' },
+  { name: 'UI/UX Design', sub: 'Product Design', bg: '#3a507e', fg: '#fff', glyph: 'UX' },
+  { name: 'Data Analysis', sub: 'Insights & Reporting', bg: '#6b6e78', fg: '#fff', glyph: 'DA' },
+  { name: 'Prompt Engineering', sub: 'IBM Certified', bg: '#12203a', fg: '#fff', glyph: 'AI' },
+  { name: 'Azure AI Fundamentals', sub: 'Microsoft Certified', bg: '#9a9da7', fg: '#12203a', glyph: 'Az' },
+  { name: 'IoT Systems', sub: 'Smart Products', bg: '#ffffff', fg: '#12203a', glyph: 'IoT', border: true },
 ]
 
 export default function Tools() {
