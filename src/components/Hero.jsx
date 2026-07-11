@@ -55,7 +55,7 @@ function FeatureCard({ variant, title, icon }) {
       variants={fadeUp}
       whileHover={{ y: -5 }}
       transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-      className={`relative rounded-2xl p-5 pb-16 min-h-[128px] overflow-hidden ${
+      className={`relative rounded-2xl p-5 min-h-[128px] overflow-hidden ${
         isNavy
           ? 'bg-gradient-to-br from-(--color-navy-light) to-(--color-navy) text-white'
           : 'bg-(--color-card-light) text-(--color-bg)'
@@ -68,14 +68,7 @@ function FeatureCard({ variant, title, icon }) {
       >
         <Icon name={icon} />
       </div>
-      <div className="uppercase font-bold text-sm leading-snug pr-6">{title}</div>
-      <div
-        className={`absolute bottom-4 right-4 w-8 h-8 rounded-full flex items-center justify-center ${
-          isNavy ? 'bg-white text-(--color-navy)' : 'bg-white text-(--color-bg) shadow'
-        }`}
-      >
-        <Icon name="arrow" size={14} />
-      </div>
+      <div className="uppercase font-bold text-sm leading-snug">{title}</div>
     </motion.div>
   )
 }

@@ -10,7 +10,7 @@ const experience = [
   },
   {
     company: 'JoRide',
-    role: 'Project Lead',
+    role: 'Lead Assistant',
     date: 'Graduation Project',
     desc: "Led development of JoRide — Jordan's first app-based, IoT-powered self-drive car-sharing platform.",
   },
