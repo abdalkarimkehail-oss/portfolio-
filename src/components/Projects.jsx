@@ -8,7 +8,7 @@ import halfMillionLogo from '../assets/logos/half-million.jpg'
 import pharmacyLogo from '../assets/logos/pharmacy.png'
 import k8sLogo from '../assets/logos/kubernetes.png'
 import powerBiLogo from '../assets/logos/power-bi.png'
-import arabianOudLogo from '../assets/logos/arabian-oud.png'
+import arabianOudLogo from '../assets/logos/arabian-oud.jpg'
 
 // Each project can carry a `logo` (imported image) once the asset is available.
 // Until then, `variant` controls the thumbnail backdrop and the title renders as text.
