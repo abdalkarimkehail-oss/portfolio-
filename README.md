@@ -1,4 +1,4 @@
-# Omar Alrayyan — Portfolio
+# Abdalkarim Kehail — Portfolio
 
 React + Vite + Tailwind CSS v4 + Framer Motion single-page portfolio.
 
@@ -19,19 +19,19 @@ npm run build
 
 Output goes to `dist/`.
 
-## Deploy to Netlify
+## Deploy
 
-- Drag-and-drop the `dist/` folder onto https://app.netlify.com/drop, or
-- Connect the repo in Netlify and set:
-  - Build command: `npm run build`
-  - Publish directory: `dist`
+Deployed automatically to GitHub Pages via `.github/workflows/deploy.yml` on every push to `main`.
+
+Live at: https://abdalkarimkehail-oss.github.io/portfolio-/
 
 ## Structure
 
 ```
 src/
-  components/   Nav, Hero, Marquee, Projects, Experience, Tools, Blog, Contact, Footer
+  components/   Nav, Hero, Projects, Experience, Tools, Blog, Contact, Footer
   lib/motion.js shared Framer Motion variants (fadeUp, stagger)
+  lib/icons.jsx shared inline icon set
   index.css     Tailwind v4 theme tokens + grain overlay + reduced-motion handling
 ```
 
@@ -40,6 +40,6 @@ src/
 - Hero bio, socials, stats: `src/components/Hero.jsx`
 - Projects: `src/components/Projects.jsx`
 - Experience: `src/components/Experience.jsx`
-- Tools: `src/components/Tools.jsx`
+- Skills/tools: `src/components/Tools.jsx`
 - Blog posts: `src/components/Blog.jsx`
-- Contact form fields: `src/components/Contact.jsx` (currently client-side only — wire `handleSubmit` to your backend/email service to actually receive messages)
+- Contact form fields: `src/components/Contact.jsx` (currently client-side only — wire `handleSubmit` to a backend/email service to actually receive messages)

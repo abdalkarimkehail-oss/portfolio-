@@ -2,12 +2,12 @@ import { motion } from 'framer-motion'
 import { fadeUp, staggerContainer, viewportOnce } from '../lib/motion'
 
 const tools = [
-  { name: 'Flutter', sub: 'Mobile', bg: '#02569B', fg: '#fff', glyph: 'Fl' },
-  { name: 'ASP.NET Core', sub: 'Backend', bg: '#512BD4', fg: '#fff', glyph: 'A' },
-  { name: 'React', sub: 'Frontend', bg: '#149ECA', fg: '#fff', glyph: '⚛' },
-  { name: 'Notion', sub: 'Productivity', bg: '#ffffff', fg: '#111111', glyph: 'N', border: true },
-  { name: 'Figma', sub: 'Design', bg: '#A259FF', fg: '#fff', glyph: 'F' },
-  { name: 'Netlify', sub: 'Hosting', bg: '#00C7B7', fg: '#0e0e10', glyph: 'N' },
+  { name: 'Front-End Dev', sub: 'React, UI Engineering', bg: '#2c4a86', fg: '#fff', glyph: '</>' },
+  { name: 'UI/UX Design', sub: 'Product Design', bg: '#A259FF', fg: '#fff', glyph: 'UX' },
+  { name: 'Data Analysis', sub: 'Insights & Reporting', bg: '#00C7B7', fg: '#0e0e10', glyph: 'DA' },
+  { name: 'Prompt Engineering', sub: 'IBM Certified', bg: '#052FAD', fg: '#fff', glyph: 'AI' },
+  { name: 'Azure AI Fundamentals', sub: 'Microsoft Certified', bg: '#0078D4', fg: '#fff', glyph: 'Az' },
+  { name: 'IoT Systems', sub: 'Smart Products', bg: '#ffffff', fg: '#111111', glyph: 'IoT', border: true },
 ]
 
 export default function Tools() {
@@ -25,7 +25,7 @@ export default function Tools() {
             variants={fadeUp}
             className="uppercase font-black tracking-tight leading-none text-[clamp(2rem,5vw,3.5rem)]"
           >
-            Premium<span className="block text-(--color-muted)">Tools</span>
+            Skills &<span className="block text-(--color-muted)">Expertise</span>
           </motion.h2>
         </motion.div>
 
@@ -45,7 +45,7 @@ export default function Tools() {
               className="rounded-2xl border border-(--color-border) bg-(--color-surface) px-5 py-6 flex items-center gap-3.5"
             >
               <div
-                className="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm shrink-0"
+                className="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-[11px] shrink-0"
                 style={{
                   background: t.bg,
                   color: t.fg,

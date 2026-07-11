@@ -4,7 +4,7 @@ import { fadeUp, staggerContainer, viewportOnce } from '../lib/motion'
 import { Icon } from '../lib/icons'
 
 const socials = [
-  { label: 'GitHub', href: 'https://github.com/omaralrayyan7', icon: 'dribbble' },
+  { label: 'GitHub', href: 'https://github.com/abdalkarimkehail-oss', icon: 'dribbble' },
   { label: 'Twitter', href: 'https://twitter.com', icon: 'twitter' },
   { label: 'Instagram', href: 'https://instagram.com', icon: 'instagram' },
   { label: 'YouTube', href: 'https://youtube.com', icon: 'youtube' },
@@ -95,16 +95,17 @@ export default function Hero() {
             <div className="rounded-[18px] overflow-hidden aspect-[3/4]">
               <img
                 src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=400&h=530&fit=crop&grayscale"
-                alt="Omar Alrayyan"
+                alt="Abdalkarim Kehail"
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="text-center mt-4">
               <div className="font-extrabold tracking-tight text-sm uppercase">
-                Omar Alrayyan
+                Abdalkarim Kehail
               </div>
               <p className="text-xs text-black/55 mt-2.5 px-2 leading-relaxed">
-                Software engineer building IoT, mobile, and web products end to end.
+                Front-end developer and AI &amp; IoT enthusiast, building smart,
+                data-driven products.
               </p>
               <div className="flex justify-center gap-2 mt-4">
                 {socials.map((s) => (
@@ -141,17 +142,20 @@ export default function Hero() {
               variants={fadeUp}
               className="max-w-md text-(--color-muted) mt-6 leading-relaxed"
             >
-              I build high-performance web applications with a strong focus on
-              kinetic design, intuitive interfaces, and robust architecture.
+              Software Engineer with a Bachelor's degree from Applied Science
+              University. Experienced in front-end development, UI/UX, and data
+              analysis — led development of JoRide, Jordan's first app-based,
+              IoT-powered self-drive car-sharing platform, as my graduation
+              project.
             </motion.p>
 
             <motion.div
               variants={fadeUp}
               className="grid grid-cols-3 gap-4 mt-10 pt-8 border-t border-(--color-border)"
             >
-              <Stat n={5} label="Years of Experience" />
-              <Stat n={14} label="Projects Completed" />
-              <Stat n={6} label="Worldwide Clients" />
+              <Stat n={1} label="Internship Completed" />
+              <Stat n={1} label="Flagship Project" />
+              <Stat n={2} label="Certifications" />
             </motion.div>
 
             <motion.div
@@ -160,12 +164,12 @@ export default function Hero() {
             >
               <FeatureCard
                 variant="navy"
-                title="Dynamic Animation, Motion Design"
+                title="AI-Assisted Development, Prompt Engineering"
                 icon="layers"
               />
               <FeatureCard
                 variant="light"
-                title="Flutter, ASP.NET Core, React"
+                title="Front-End, UI/UX, IoT Systems"
                 icon="grid"
               />
             </motion.div>

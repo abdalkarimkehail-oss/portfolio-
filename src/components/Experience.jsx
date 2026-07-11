@@ -3,22 +3,22 @@ import { fadeUp, staggerContainer, viewportOnce } from '../lib/motion'
 
 const experience = [
   {
+    company: '3D-Systems Co.',
+    role: 'Front-End & UI/UX Intern',
+    date: 'Internship',
+    desc: 'Hands-on internship experience in front-end development, UI/UX design, and data analysis.',
+  },
+  {
     company: 'JoRide',
-    role: 'Lead Mobile Engineer',
-    date: '2024 — Present',
-    desc: 'Built the mobile app and backend services for a peer-to-peer car-sharing platform, from architecture to launch.',
+    role: 'Project Lead',
+    date: 'Graduation Project',
+    desc: "Led development of JoRide — Jordan's first app-based, IoT-powered self-drive car-sharing platform.",
   },
   {
-    company: 'MediRoute JO',
-    role: 'Software Engineer',
-    date: '2023 — 2024',
-    desc: 'Developed an AI-driven referral engine to route patients to appropriate care providers.',
-  },
-  {
-    company: 'Alrayyan Group',
-    role: 'Web Developer',
-    date: '2022 — 2023',
-    desc: 'Delivered a multi-site web presence covering several affiliated businesses.',
+    company: 'Certifications',
+    role: 'IBM · Microsoft',
+    date: 'Prompt Engineering & Azure AI',
+    desc: 'Certified in Prompt Engineering (IBM) and Microsoft Azure AI Fundamentals, with a strong interest in AI-assisted development and smart systems.',
   },
 ]
 
@@ -37,7 +37,7 @@ export default function Experience() {
             variants={fadeUp}
             className="uppercase font-black tracking-tight leading-none text-[clamp(2rem,5vw,3.5rem)]"
           >
-            5 Years of<span className="block text-(--color-muted)">Experience</span>
+            My<span className="block text-(--color-muted)">Experience</span>
           </motion.h2>
         </motion.div>
 
