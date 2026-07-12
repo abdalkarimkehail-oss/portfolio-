@@ -9,6 +9,7 @@ import pharmacyLogo from '../assets/logos/pharmacy.png'
 import k8sLogo from '../assets/logos/kubernetes.png'
 import powerBiLogo from '../assets/logos/power-bi.png'
 import arabianOudLogo from '../assets/logos/arabian-oud.jpg'
+import flightReservationLogo from '../assets/logos/flight-reservation.jpg'
 
 // Each project can carry a `logo` (imported image) once the asset is available.
 // Until then, `variant` controls the thumbnail backdrop and the title renders as text.
@@ -94,6 +95,14 @@ const projects = [
     href: 'https://github.com/abdalkarimkehail-oss/Arabian-oud-README',
     variant: 'light',
     logo: arabianOudLogo,
+  },
+  {
+    title: 'Flight Reservation System',
+    tag: 'ASP.NET CORE / SQL',
+    desc: 'Secure, data-driven flight ticket-booking system with real-time database interaction and authentication/validation layers.',
+    href: 'https://github.com/abdalkarimkehail-oss/Flight-reservation-system',
+    variant: 'navy',
+    logo: flightReservationLogo,
   },
 ]
 
