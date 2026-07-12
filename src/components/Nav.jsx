@@ -7,6 +7,7 @@ const links = [
   { href: '#projects', label: 'Projects', icon: 'folder' },
   { href: '#experience', label: 'Experience', icon: 'briefcase' },
   { href: '#tools', label: 'Tools', icon: 'tool' },
+  { href: '#certifications', label: 'Certifications', icon: 'award' },
   { href: '#thoughts', label: 'Thoughts', icon: 'book' },
 ]
 

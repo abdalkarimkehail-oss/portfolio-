@@ -3,6 +3,7 @@ import Hero from './components/Hero'
 import Projects from './components/Projects'
 import Experience from './components/Experience'
 import Tools from './components/Tools'
+import Certifications from './components/Certifications'
 import Blog from './components/Blog'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
@@ -16,6 +17,7 @@ export default function App() {
       <Projects />
       <Experience />
       <Tools />
+      <Certifications />
       <Blog />
       <Contact />
       <Footer />

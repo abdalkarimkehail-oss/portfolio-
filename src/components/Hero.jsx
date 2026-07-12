@@ -148,7 +148,7 @@ export default function Hero() {
             >
               <Stat n={2} label="Internship Completed" />
               <Stat n={5} label="Flagship Project" />
-              <Stat n={4} label="Certifications" />
+              <Stat n={6} label="Certifications" />
             </motion.div>
 
             <motion.div
